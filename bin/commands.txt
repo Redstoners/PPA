@@ -1,0 +1,4 @@
+help    Displays these commands
+time    Displays the current time
+date    Displays the current date
+google  Google stuff on the internet
