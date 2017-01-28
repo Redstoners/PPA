@@ -1,6 +1,12 @@
 # Setup
 import time
+import webbrowser
 
+# Makes the webbrowser command
+def open_link(link):
+    webbrowser.open(link)
+    speak("Opening web browser")
+    pause(2)
 
 # Makes the pause command
 def pause(seconds):
@@ -29,9 +35,19 @@ while var == 1:
         file.close()
     elif input == "time":
         speak("The current time is " + current_time)
+    elif input == "google":
+        speak("What do you want to Google?")
+        google = raw_input(">>>")
+        google.replace(" ", "+")
+        open_link('https://www.google.nl/#q=' + google.replace(" ", "+"))
     elif input == "hello":
         print("Hello human!")
     elif input == "date":
         print("The current date is " + current_date)
+    elif input == "what is your favorite song?":
+        speak("I really like human music!")
+        pause(1)
+        speak("Let me show it to you!")
+        open_link('https://www.youtube.com/watch?v=q4k1IK_o59M')
     else:
         print("That is not a valid command")
