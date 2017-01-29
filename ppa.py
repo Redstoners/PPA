@@ -49,5 +49,9 @@ while var == 1:
         pause(1)
         speak("Let me show it to you!")
         open_link('https://www.youtube.com/watch?v=q4k1IK_o59M')
+    elif input == "i want to eat":
+        speak("What do you want to eat?")
+        eat = raw_input(">>>")
+        open_link('https://www.google.nl/maps/search/' + eat.replace(" ", "+"))
     else:
         print("That is not a valid command")
