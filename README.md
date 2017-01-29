@@ -1,9 +1,8 @@
-# P.A.I.
+# P.P.A.
 A personal assistant written in Python.
 
 ## Why did you start this project?
-~~I wanted to change the world with a new and revolutionary AI that would be lightweight, IoT friendly, open-source and hackable.~~
-I had nothing to do, and school is driving me to insanity
+I had nothing to do, and school is driving me insane.
 
 ### What does it do?
 It personally assists you.
@@ -11,7 +10,7 @@ It personally assists you.
 ### Does it recognize your voice?
 Not yet.
 
-### Does it have a Gui?
+### Does it have a GUI?
 Not yet.
 
 ### Can it talk via text-to-speech?
