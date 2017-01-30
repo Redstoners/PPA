@@ -28,28 +28,28 @@ speak("Hello! i am PAI, your owm personal assistant")
 var = 1
 while var == 1:
     input = raw_input(">>>")
-    if input == "help":
+    if input in {"help", "help me", }:
         file = open('bin/commands.txt', 'r')
         file_contents = file.read()
         print (file_contents)
         file.close()
-    elif input == "time":
+    elif input in {"time", "the current time", "current time"}:
         speak("The current time is " + current_time)
-    elif input == "google":
+    elif input in {"search", "google"}:
         speak("What do you want to Google?")
         google = raw_input(">>>")
         google.replace(" ", "+")
         open_link('https://www.google.nl/#q=' + google.replace(" ", "+"))
     elif input == "hello":
         print("Hello human!")
-    elif input == "date":
+    elif input in {"date", "the current date", "current date"}:
         print("The current date is " + current_date)
-    elif input == "what is your favorite song?":
+    elif input in {"what is your favorite song?", "favorite song"}:
         speak("I really like human music!")
         pause(1)
         speak("Let me show it to you!")
         open_link('https://www.youtube.com/watch?v=q4k1IK_o59M')
-    elif input == "i want to eat":
+    elif input in {"im hungry", "i want to eat", "restaurant"}:
         speak("What do you want to eat?")
         eat = raw_input(">>>")
         open_link('https://www.google.nl/maps/search/' + eat.replace(" ", "+"))
