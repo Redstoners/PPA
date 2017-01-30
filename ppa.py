@@ -1,6 +1,9 @@
 # Setup
 import time
 import webbrowser
+import md5
+import sys
+from urllib2 import urlopen
 
 # Makes the webbrowser command
 def open_link(link):
@@ -21,7 +24,6 @@ time.ctime()
 current_time = time.strftime('%H:%M')
 current_date = time.strftime('%d %B %Y')
 
-
 speak("Hello! i am PAI, your owm personal assistant")
 
 # Main program
@@ -33,6 +35,9 @@ while var == 1:
         file_contents = file.read()
         print (file_contents)
         file.close()
+    elif input in {"exit", "kill", "escape"}:
+        speak("Killing PPA")
+        sys.exit()
     elif input in {"time", "the current time", "current time"}:
         speak("The current time is " + current_time)
     elif input in {"search", "google"}:
@@ -53,5 +58,17 @@ while var == 1:
         speak("What do you want to eat?")
         eat = raw_input(">>>")
         open_link('https://www.google.nl/maps/search/' + eat.replace(" ", "+"))
+    elif input in {"what is my ip?", "my ip", "ip", "what's my ip?", "whats my ip?", "whats my ip", "what is my ip"}:
+        ip = urlopen('http://ip.42.pl/raw').read()
+        speak(ip)
+    elif input in {"md5"}:
+        speak("What do you want to hash to MD5?")
+        md5_string = raw_input('>>>')
+        speak("proccesing...")
+        speak( md5.md5(md5_string).hexdigest() )
+    elif input in {"what is per?"}:
+        speak("A huge dumbass...")
+        pause(2)
+        speak("Take my word for it")
     else:
         print("That is not a valid command")
