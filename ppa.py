@@ -36,7 +36,7 @@ while var == 1:
         print (file_contents)
         file.close()
     elif input in {"exit", "kill", "escape"}:
-        speak("Killing PPA")
+        speak("Killing PPA...")
         sys.exit()
     elif input in {"time", "the current time", "current time"}:
         speak("The current time is " + current_time)
