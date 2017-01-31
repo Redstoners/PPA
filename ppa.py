@@ -3,6 +3,7 @@ import time
 import webbrowser
 import md5
 import sys
+import hashlib
 from urllib2 import urlopen
 
 # Makes the webbrowser command
@@ -18,6 +19,27 @@ def pause(seconds):
 # Makes the speak command
 def speak(text):
     print(text)
+
+# Makes the sha1 encrypter command
+def encrypt_sha1(textsha1):
+    hash_objectsha1 = hashlib.sha1(textsha1)
+    hex_digsha1 = hash_objectsha1.hexdigest()
+    speak("Proccesing...")
+    speak(hex_digsha1)
+
+# Makes the sha224 encrypter command
+def encrypt_sha224(textsha224):
+    hash_objectsha224 = hashlib.sha224(textsha224)
+    hex_digsha224 = hash_objectsha224.hexdigest()
+    speak("Proccesing...")
+    speak(hex_digsha224)
+
+# Makes the sha256 encrypter command
+def encrypt_sha256(textsha256):
+    hash_objectsha256 = hashlib.sha256(textsha256)
+    hex_digsha256 = hash_objectsha256.hexdigest()
+    speak("Proccesing...")
+    speak(hex_digsha256)
 
 # Initializes the time and date
 time.ctime()
@@ -66,6 +88,14 @@ while var == 1:
         md5_string = raw_input('>>>')
         speak("proccesing...")
         speak( md5.md5(md5_string).hexdigest() )
+    elif input in {"sha1"}:
+        speak("What do you want to encrypt?")
+        sha1_input = raw_input('>>>')
+        encrypt_sha1(sha1_input)
+    elif input in {"sha1"}:
+        speak("What do you want to encrypt?")
+        sha1_input = raw_input('>>>')
+        encrypt_sha1(sha1_input)
     elif input in {"what is per?"}:
         speak("A huge dumbass...")
         pause(2)
