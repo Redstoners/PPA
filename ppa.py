@@ -96,6 +96,14 @@ while var == 1:
         speak("What do you want to encrypt?")
         sha1_input = raw_input('>>>')
         encrypt_sha1(sha1_input)
+    elif input in {"sha224"}:
+        speak("What do you want to encrypt?")
+        sha224_input = raw_input('>>>')
+        encrypt_sha224(sha224_input)
+    elif input in {"sha256"}:
+        speak("What do you want to encrypt?")
+        sha256_input = raw_input('>>>')
+        encrypt_sha256(sha256_input)
     elif input in {"what is per?"}:
         speak("A huge dumbass...")
         pause(2)
