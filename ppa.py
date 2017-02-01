@@ -6,6 +6,16 @@ import sys
 import hashlib
 from urllib2 import urlopen
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 # Makes the webbrowser command
 def open_link(link):
     webbrowser.open(link)
@@ -18,7 +28,11 @@ def pause(seconds):
 
 # Makes the speak command
 def speak(text):
-    print(text)
+    print(bcolors.OKBLUE + text)
+
+# Makes the warning command
+def warning(warning_text):
+    print(bcolors.WARNING + warning_text)
 
 # Makes the sha1 encrypter command
 def encrypt_sha1(textsha1):
@@ -67,7 +81,7 @@ while var == 1:
         google = raw_input(">>>")
         google.replace(" ", "+")
         open_link('https://www.google.nl/#q=' + google.replace(" ", "+"))
-    elif input == "hello":
+    elif input in {"hello ppa", "hello", "hello!", "Hello PPA"}:
         print("Hello human!")
     elif input in {"date", "the current date", "current date"}:
         print("The current date is " + current_date)
@@ -109,4 +123,4 @@ while var == 1:
         pause(2)
         speak("Take my word for it")
     else:
-        print("That is not a valid command")
+        warning("That is not a valid command")
