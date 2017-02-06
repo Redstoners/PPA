@@ -4,17 +4,9 @@ import webbrowser
 import md5
 import sys
 import hashlib
+import random
 from urllib2 import urlopen
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
 
 # Makes the webbrowser command
 def open_link(link):
@@ -28,11 +20,11 @@ def pause(seconds):
 
 # Makes the speak command
 def speak(text):
-    print(bcolors.OKBLUE + text)
+    print(text)
 
 # Makes the warning command
 def warning(warning_text):
-    print(bcolors.WARNING + warning_text)
+    print(warning_text)
 
 # Makes the sha1 encrypter command
 def encrypt_sha1(textsha1):
@@ -122,5 +114,11 @@ while var == 1:
         speak("A huge dumbass...")
         pause(2)
         speak("Take my word for it")
+    elif input in {"random", "random number"}:
+        speak("Input a minimum for the generated numbers")
+        mini = raw_input(">>>")
+        speak("Input a maximum for the generated numbers")
+        maxi = raw_input(">>>")
+        print random.uniform(mini,maxi)
     else:
         warning("That is not a valid command")
