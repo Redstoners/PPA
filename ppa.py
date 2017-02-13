@@ -6,6 +6,7 @@ import sys
 import hashlib
 import random
 from urllib2 import urlopen
+from yahoo_finance import Share
 
 
 # Makes the webbrowser command
@@ -115,10 +116,9 @@ while var == 1:
         pause(2)
         speak("Take my word for it")
     elif input in {"random", "random number"}:
-        speak("Input a minimum for the generated numbers")
-        mini = raw_input(">>>")
-        speak("Input a maximum for the generated numbers")
-        maxi = raw_input(">>>")
-        print random.uniform(mini,maxi)
+        mini = raw_input
+        print random.randrange(1,100)
+    elif input in {"stocks", "stock", "stock prices"}:
+
     else:
         warning("That is not a valid command")
