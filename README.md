@@ -8,15 +8,15 @@ I had nothing to do, and school is driving me insane.
 It personally assists you.
 
 ### Does it recognize your voice?
-Not yet.
+Not yet. (And it will never)
 
 ### Does it have a GUI?
-Not yet.
+Not yet. (And it will never)
 
 ### Can it talk via text-to-speech?
-Not yet.
+Not yet. (And it will never)
 
-# To-Do list
+# To-Do list (These things will never happen as I abandoned the project)
 
 + get the text-to-speech working
 + get voice recognition working
